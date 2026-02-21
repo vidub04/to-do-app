@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #0f001a;
+    color: white;
+}
+
+/* Aurora Background */
+.aurora-bg {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, #820707, transparent 40%),
+                radial-gradient(circle at 70% 40%, #ba2b3a, transparent 40%),
+                radial-gradient(circle at 50% 80%, #e15858, transparent 40%);
+    filter: blur(80px);
+    animation: auroraMove 10s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+@keyframes auroraMove {
+    from {
+        transform: translate(-10%, -10%) rotate(0deg);
+    }
+    to {
+        transform: translate(10%, 10%) rotate(20deg);
+    }
+}
+
+/* Container */
+.container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 40px rgba(255, 0, 200, 0.3);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffb3f5;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.add-btn {
+    background: linear-gradient(45deg, #ff4ecd, #ff9af5);
+    color: white;
+}
+
+.delete-btn {
+    background: linear-gradient(45deg, #ff2e88, #ff6ec7);
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px pink;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+li:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #ff4ecd;
+}
+
+/* Completed Task */
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

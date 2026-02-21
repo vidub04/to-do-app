@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="aurora-bg"></div>
+
+<div class="container">
+    <h1>✨ Aurora To-Do</h1>
+
+    <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+        <button onclick="addTask()" class="add-btn">Add Task</button>
+        <button onclick="deleteTask()" class="delete-btn">Delete Task</button>
+    </div>
+
+    <ul id="taskList">
+        <li>
+            <input type="checkbox">
+            <span>Finish homework</span>
+        </li>
+        <li>
+            <input type="checkbox">
+            <span>Workout for 20 mins</span>
+        </li>
+        <li>
+            <input type="checkbox">
+            <span>Read a book</span>
+        </li>
+    </ul>
+</div>
+
+<script>
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let taskText = input.value.trim();
+
+    if (taskText === "") return;
+
+    let li = document.createElement("li");
+
+    li.innerHTML = `
+        <input type="checkbox">
+        <span>${taskText}</span>
+    `;
+
+    document.getElementById("taskList").appendChild(li);
+    input.value = "";
+}
+
+function deleteTask() {
+    let list = document.getElementById("taskList");
+    let items = list.querySelectorAll("li");
+
+    items.forEach(item => {
+        let checkbox = item.querySelector("input");
+        if (checkbox.checked) {
+            item.remove();
+        }
+    });
+}
+</script>
+
+</body>
+</html>
