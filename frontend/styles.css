@@ -8,7 +8,7 @@
 body {
     height: 100vh;
     overflow: hidden;
-    background: #0f001a;
+    background: #1e011b;
     color: white;
 }
 
@@ -17,9 +17,9 @@ body {
     position: fixed;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, #820707, transparent 40%),
-                radial-gradient(circle at 70% 40%, #ba2b3a, transparent 40%),
-                radial-gradient(circle at 50% 80%, #e15858, transparent 40%);
+    background: radial-gradient(circle at 30% 50%, #e41ea9a7, transparent 40%),
+                radial-gradient(circle at 70% 40%, #c12faba2, transparent 40%),
+                radial-gradient(circle at 50% 80%, #e540eb, transparent 40%);
     filter: blur(80px);
     animation: auroraMove 10s infinite alternate ease-in-out;
     z-index: -1;
